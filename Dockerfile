@@ -2,6 +2,8 @@ ARG FROM_IMG=qnib/alplain-jre8
 ARG DOCKER_REGISTRY=docker.io
 FROM ${DOCKER_REGISTRY}/${FROM_IMG}
 
+VOLUME ["/opt/neo4j/data", "/opt/neo4j/logs", "/opt/neo4j/run"]
+
 ARG NEO_VER=3.3.0
 ENV NEO_DBMS_LISTEN_ADDR=0.0.0.0 \
     NEO_BOLT_ADDRESS=0.0.0.0 \
