@@ -5,7 +5,8 @@ FROM ${DOCKER_REGISTRY}/${FROM_IMG}
 VOLUME ["/opt/neo4j/data", "/opt/neo4j/logs", "/opt/neo4j/run"]
 
 ARG NEO_VER=3.3.0
-ENV NEO_DBMS_LISTEN_ADDR=0.0.0.0 \
+ENV ENTRYPOINTS_DIR=/opt/qnib/entry/ \
+    NEO_DBMS_LISTEN_ADDR=0.0.0.0 \
     NEO_BOLT_ADDRESS=0.0.0.0 \
     NEO_BOLT_PORT=7687 \
     NEO_HTTP_ADDRESS=0.0.0.0 \
